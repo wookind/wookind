@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="FOXBORO DCS中IACC数据库同步问题, 生活, 工作, 技术, 教程, 资源分享">
+    <meta name="keywords" content="本特利3500程序下载遇到的问题, 生活, 工作, 技术, 教程, 资源分享">
     <meta name="description" content="记录生活工作的点点滴滴~">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>FOXBORO DCS中IACC数据库同步问题 | Zack个人空间</title>
+    <title>本特利3500程序下载遇到的问题 | Zack个人空间</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">FOXBORO DCS中IACC数据库同步问题</h1>
+                    <h1 class="description center-align post-title">本特利3500程序下载遇到的问题</h1>
                 </div>
             </div>
         </div>
@@ -346,8 +346,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/FOXBORO/">
-                                <span class="chip bg-color">FOXBORO</span>
+                            <a href="/tags/%E6%9C%AC%E7%89%B9%E5%88%A9/">
+                                <span class="chip bg-color">本特利</span>
                             </a>
                         
                     </div>
@@ -358,8 +358,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/FOXBORO-DCS%E6%95%99%E7%A8%8Bia/" class="post-category">
-                                FOXBORO DCS教程ia
+                            <a href="/categories/%E6%9C%AC%E7%89%B9%E5%88%A9%E5%B0%8F%E5%B8%B8%E8%AF%86/" class="post-category">
+                                本特利小常识
                             </a>
                         
                     </div>
@@ -371,7 +371,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-22
+                    2022-10-01
                 </div>
                 
 
@@ -395,32 +395,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="iacc数据库同步问题"><a class="markdownIt-Anchor" href="#iacc数据库同步问题">#</a> IACC 数据库同步问题</h1>
-<h2 id="iacc数据库独立的iacc数据库"><a class="markdownIt-Anchor" href="#iacc数据库独立的iacc数据库">#</a> IACC 数据库	独立的 IACC 数据库</h2>
-<h2 id="icc数据库独立的icc数据库"><a class="markdownIt-Anchor" href="#icc数据库独立的icc数据库">#</a> ICC 数据库	独立的 ICC 数据库</h2>
-<h2 id="cp内容当前控制器中的运行内容"><a class="markdownIt-Anchor" href="#cp内容当前控制器中的运行内容">#</a> CP 内容		当前控制器中的运行内容</h2>
-<p>Upload	在 ICC 中使用的命令，从 CP 中同步实时数据并更新 ICC 数据库中数据。<br>
-将 ICC 数据库中包含的 blocks 与 CP 中相同的 blocks 进行参数更新，ICC 中不包含的且 CP 中包含的 BLOCKS 不会被同步。</p>
-<h3 id="upload-and-compare-to-cp"><a class="markdownIt-Anchor" href="#upload-and-compare-to-cp">#</a> Upload and Compare To CP</h3>
-<pre><code>先进行Upload更新ICC数据库，再进行IACC数据库内容与ICC数据库内容进行对比。
-</code></pre>
-<h3 id="compare-to-cp"><a class="markdownIt-Anchor" href="#compare-to-cp">#</a> Compare To CP</h3>
-<pre><code>进行IACC数据库内容与ICC数据库内容进行对比。
-
-正常情况下ICC数据库与CP中的BLOCKS数量是一致的，有特殊情况CP中的内容会比ICC数据库中的BLOCK多，导致控制器初始化下种后会丢失CP中多出的block块。
-
-导致CP中block块多出的原因是当ICC处于编辑状态时异常崩溃就会出现ICC数据库中的BLOCKS丢失，CP中的并不会收到影响。
-
-保存CP中完整内容的方法只有做checkpoint，对CP进行快照备份。
-</code></pre>
-<h2 id="如何抢救icc数据库中丢失的内容"><a class="markdownIt-Anchor" href="#如何抢救icc数据库中丢失的内容">#</a> 如何抢救 icc 数据库中丢失的内容？</h2>
-<p>1、	在 system management 中对控制器做 checkpoint。<br>
-2、	保存好 DBCPNAME.UC 文件，此文件为 CP 快照文件。<br>
-3、	在 icc 中添加缺少的 block 块，第一次提示错误确定后 CP 中的同名 block 块被冲掉，第二次继续新建缺失 BLOCK 块，建立成功。此时不用管 BLOCK 块的内容，只要名称和类型一致就可以。<br>
-4、	全部缺失的 block 块新建完毕后，恢复备份的 DBCPNAME.UC 文件后重启控制器。<br>
-5、	控制器启动完毕后，做 UPLOAD 操作，新建 block 块与 CP 中的 block 块同步完毕。<br>
-6、	恢复结束。</p>
-<p><em><strong>注：经过测试此方法只能恢复部分参数，CALCA 块的程序步骤和连接并不能恢复。</strong></em></p>
+                <p><em><strong>本特利 3500 下装时需要两路供电都正常时候才可以下载程序</strong></em><br>
+今天测试时使用单路供电给本特利机架供电，下载程序时提示供电不满足，只能将两路供电全部上电后才能正常下载程序。<br>
+## 待定 ##</p>
+<pre><code>###测试###</code></pre>
 
                 
             </div>
@@ -447,7 +425,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wookind.github.io/2021/09/22/foxboro-dcs-zhong-iacc-shu-ju-ku-tong-bu-wen-ti/">http://wookind.github.io/2021/09/22/foxboro-dcs-zhong-iacc-shu-ju-ku-tong-bu-wen-ti/</a>
+                    <a href="http://wookind.github.io/2022/10/01/ben-te-li-3500-cheng-xu-xia-zai-yu-dao-de-wen-ti/">http://wookind.github.io/2022/10/01/ben-te-li-3500-cheng-xu-xia-zai-yu-dao-de-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,8 +463,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/FOXBORO/">
-                                    <span class="chip bg-color">FOXBORO</span>
+                                <a href="/tags/%E6%9C%AC%E7%89%B9%E5%88%A9/">
+                                    <span class="chip bg-color">本特利</span>
                                 </a>
                             
                         </div>
@@ -919,17 +897,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/25/fcp280-kong-zhi-qi-letterbug-de-pei-zhi-fang-fa/">
+                <a href="/2022/10/01/ben-te-li-3500-cheng-xu-xia-zai-yu-dao-de-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="FCP280控制器LetterBug的配置方法">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="本特利3500程序下载遇到的问题">
                         
-                        <span class="card-title">FCP280控制器LetterBug的配置方法</span>
+                        <span class="card-title">本特利3500程序下载遇到的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -939,22 +918,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-01
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Zack_Wang
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%AC%E7%89%B9%E5%88%A9%E5%B0%8F%E5%B8%B8%E8%AF%86/" class="post-category">
+                                    本特利小常识
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/FOXBORO/">
-                        <span class="chip bg-color">FOXBORO</span>
+                    <a href="/tags/%E6%9C%AC%E7%89%B9%E5%88%A9/">
+                        <span class="chip bg-color">本特利</span>
                     </a>
                     
                 </div>
@@ -968,13 +952,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/19/foxboro-dcs-jiao-cheng-ying-jian-pian-1/">
+                <a href="/2022/03/20/foxboro-dcs-cao-zuo-yuan-xing-wei-ji-lu-de-pei-zhi-yu-cha-kan-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="FOXBORO DCS教程-硬件篇1">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Foxboro DCS操作员行为记录的配置与查看方法">
                         
-                        <span class="card-title">FOXBORO DCS教程-硬件篇1</span>
+                        <span class="card-title">Foxboro DCS操作员行为记录的配置与查看方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -985,7 +969,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
                             </span>
                         <span class="publish-author">
                             

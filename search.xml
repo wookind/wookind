@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>本特利3500程序下载遇到的问题</title>
+      <link href="/2022/10/01/ben-te-li-3500-cheng-xu-xia-zai-yu-dao-de-wen-ti/"/>
+      <url>/2022/10/01/ben-te-li-3500-cheng-xu-xia-zai-yu-dao-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p><em><strong>本特利 3500 下装时需要两路供电都正常时候才可以下载程序</strong></em><br>今天测试时使用单路供电给本特利机架供电，下载程序时提示供电不满足，只能将两路供电全部上电后才能正常下载程序。<br>## 待定 ##</p><pre><code>###测试###</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 本特利小常识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 本特利 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Foxboro DCS操作员行为记录的配置与查看方法</title>
       <link href="/2022/03/20/foxboro-dcs-cao-zuo-yuan-xing-wei-ji-lu-de-pei-zhi-yu-cha-kan-fang-fa/"/>
       <url>/2022/03/20/foxboro-dcs-cao-zuo-yuan-xing-wei-ji-lu-de-pei-zhi-yu-cha-kan-fang-fa/</url>
       
-        <content type="html"><![CDATA[<h1 id="foxboro-ias-dcs系统"><a class="markdownIt-Anchor" href="#foxboro-ias-dcs系统">#</a> Foxboro IA’S DCS 系统</h1><h2 id="操作员行为记录的配置与查看方法"><a class="markdownIt-Anchor" href="#操作员行为记录的配置与查看方法">#</a> 操作员行为记录的配置与查看方法</h2><h3 id="一设置操作员行为记录"><a class="markdownIt-Anchor" href="#一设置操作员行为记录">#</a> 一。设置操作员行为记录</h3><ol><li>首先在 FoxView 窗口中切换为工程师环境。</li><li>在<strong> Config&gt;OperActjournal</strong> 中的<strong> Historian Log</strong> 中选中<em><strong> enable</strong></em>, 并点击<em><strong> historian</strong></em>，选中所见历史库名（<em><strong>需要在所有站做</strong></em>）。</li><li>修改文件 <strong>D:\opt\aim\examples\messages.inp</strong> , 把这里的 hist01 替换成历史库名，如已是，则不用替换。</li><li>在顶部菜单<strong> Config&gt;AimHistorian</strong>，选中<strong> Tools</strong>, 选择 ***Batch Configurator ***。</li><li>点击<strong> Get File Name and Start Batch Configuration</strong> 按钮 。</li><li>选择<strong> D:\opt\aim\examples\messages.inp</strong> 文件然后退出 。</li></ol><h3 id="二查看操作员行为记录"><a class="markdownIt-Anchor" href="#二查看操作员行为记录">#</a> 二。查看操作员行为记录</h3><ol><li>打开软件<strong> AIM Datalink</strong> —&gt; <strong>Historian Browser</strong>，首先设定时间<strong> Settings</strong>，再选择<strong> Message</strong> —&gt; <strong>Opraction</strong>。</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="foxboro-ias-dcs系统"><a class="markdownIt-Anchor" href="#foxboro-ias-dcs系统">#</a> Foxboro IA’S DCS 系统</h1><h2 id="操作员行为记录的配置与查看方法"><a class="markdownIt-Anchor" href="#操作员行为记录的配置与查看方法">#</a> 操作员行为记录的配置与查看方法 ##</h2><h3 id="一设置操作员行为记录"><a class="markdownIt-Anchor" href="#一设置操作员行为记录">#</a> 一。设置操作员行为记录 ###</h3><ol><li>首先在 FoxView 窗口中切换为工程师环境。</li><li>在<strong> Config&gt;OperActjournal</strong> 中的<strong> Historian Log</strong> 中选中<em><strong> enable</strong></em>, 并点击<em><strong> historian</strong></em>，选中所见历史库名（<em><strong>需要在所有站做</strong></em>）。</li><li>修改文件 <strong>D:\opt\aim\examples\messages.inp</strong> , 把这里的 hist01 替换成历史库名，如已是，则不用替换。</li><li>在顶部菜单<strong> Config&gt;AimHistorian</strong>，选中<strong> Tools</strong>, 选择 ***Batch Configurator ***。</li><li>点击<strong> Get File Name and Start Batch Configuration</strong> 按钮 。</li><li>选择<strong> D:\opt\aim\examples\messages.inp</strong> 文件然后退出 。</li></ol><h3 id="二查看操作员行为记录"><a class="markdownIt-Anchor" href="#二查看操作员行为记录">#</a> 二。查看操作员行为记录 ###</h3><ol><li>打开软件<strong> AIM Datalink</strong> —&gt; <strong>Historian Browser</strong>，首先设定时间<strong> Settings</strong>，再选择<strong> Message</strong> —&gt; <strong>Opraction</strong>。</li></ol>]]></content>
       
       
       <categories>
